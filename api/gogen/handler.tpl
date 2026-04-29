@@ -2,9 +2,9 @@ package {{.PkgName}}
 
 import (
 	"net/http"
-
+{{if or .HasRequest (and (not .UseResponsePkg) (not .UseSSE))}}
     "github.com/zeromicro/go-zero/rest/httpx"
-
+{{end}}
 	{{.ImportPackages}}
 )
 
